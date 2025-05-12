@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    RED.nodes.registerType('node-red-iskra-info-tlg', {
+        category: 'function',
+        color: '#C70039',
+        defaults: {
+            name: { value: "" },
+            location: { value: "" }
+        },
+        credentials: {
+            mapbox_key: { type: "password" },
+            weatherstack_key: { type: "password" }
+        },
+        inputs: 1,
+        outputs: 3,
+        icon: "font-awesome/fa-qrcode",
+        label: function () {
+            return this.name || "node-red-iskra-info-tlg";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="node-red-iskra-info-tlg">
+
+    <div class="form-row">
+        <label><i class="fa fa-tag"></i><span data-i18n="weather-data.label.name"></span></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]weather-data.label.name">
+
+</script>
+
+<script type="text/html" data-help-name="node-red-iskra-info-tlg">
+    <p>Daten Stream vom Smart-Meter Iskra Info-Schnittstelle wird geparst.</p>
+    <p>Output[0]: Sekunden Index</p>
+    <p>Output[1]: Energie Register 1.8.0</p>
+    <p>Output[2]: Power in Watt</p>
+</script>
